@@ -61,6 +61,21 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="path" elementType="Argument">
+              <stringProp name="Argument.name">path</stringProp>
+              <stringProp name="Argument.value">order</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="app" elementType="Argument">
+              <stringProp name="Argument.name">app</stringProp>
+              <stringProp name="Argument.value">SampleApplication003</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="obtain the consumer key/secret key" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -107,6 +122,17 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
         <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract ClientId" enabled="true">
           <stringProp name="JSONPostProcessor.referenceNames">clientId</stringProp>
@@ -131,17 +157,6 @@
 byte[] encodedUsernamePassword = Base64.encodeBase64(&quot;${clientId}:${clientSecret}&quot;.getBytes());
 vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</stringProp>
         </BeanShellPreProcessor>
-        <hashTree/>
-        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
-          <collectionProp name="Asserion.test_strings">
-            <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
-          </collectionProp>
-          <stringProp name="Assertion.custom_message"></stringProp>
-          <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
-          <boolProp name="Assertion.assume_success">false</boolProp>
-          <intProp name="Assertion.test_type">2</intProp>
-          <stringProp name="Assertion.scope">all</stringProp>
-        </ResponseAssertion>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate the access token for Creator" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -240,7 +255,7 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
    &quot;context&quot;: &quot;/pizzashack&quot;,&#xd;
    &quot;version&quot;: &quot;1.0.0&quot;,&#xd;
    &quot;provider&quot;: &quot;admin&quot;,&#xd;
-   &quot;apiDefinition&quot;: &quot;{\&quot;paths\&quot;:{\&quot;/order\&quot;:{\&quot;post\&quot;:{\&quot;x-auth-type\&quot;:\&quot;Application &amp; Application User\&quot;,\&quot;x-throttling-tier\&quot;:\&quot;Unlimited\&quot;,\&quot;description\&quot;:\&quot;Create a new Order\&quot;,\&quot;parameters\&quot;:[{\&quot;schema\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/Order\&quot;},\&quot;description\&quot;:\&quot;Order object that needs to be added\&quot;,\&quot;name\&quot;:\&quot;body\&quot;,\&quot;required\&quot;:true,\&quot;in\&quot;:\&quot;body\&quot;}],\&quot;responses\&quot;:{\&quot;201\&quot;:{\&quot;headers\&quot;:{\&quot;Location\&quot;:{\&quot;description\&quot;:\&quot;The URL of the newly created resource.\&quot;,\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;schema\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/Order\&quot;},\&quot;description\&quot;:\&quot;Created.\&quot;}}}},\&quot;/menu\&quot;:{\&quot;get\&quot;:{\&quot;x-auth-type\&quot;:\&quot;Application &amp; Application User\&quot;,\&quot;x-throttling-tier\&quot;:\&quot;Unlimited\&quot;,\&quot;description\&quot;:\&quot;Return a list of available menu items\&quot;,\&quot;parameters\&quot;:[],\&quot;responses\&quot;:{\&quot;200\&quot;:{\&quot;headers\&quot;:{},\&quot;schema\&quot;:{\&quot;title\&quot;:\&quot;Menu\&quot;,\&quot;properties\&quot;:{\&quot;list\&quot;:{\&quot;items\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/MenuItem\&quot;},\&quot;type\&quot;:\&quot;array\&quot;}},\&quot;type\&quot;:\&quot;object\&quot;},\&quot;description\&quot;:\&quot;OK.\&quot;}}}}},\&quot;schemes\&quot;:[\&quot;https\&quot;],\&quot;produces\&quot;:[\&quot;application/json\&quot;],\&quot;swagger\&quot;:\&quot;2.0\&quot;,\&quot;definitions\&quot;:{\&quot;MenuItem\&quot;:{\&quot;title\&quot;:\&quot;Pizza menu Item\&quot;,\&quot;properties\&quot;:{\&quot;price\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;description\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;name\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;image\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;name\&quot;]},\&quot;Order\&quot;:{\&quot;title\&quot;:\&quot;Pizza Order\&quot;,\&quot;properties\&quot;:{\&quot;customerName\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;delivered\&quot;:{\&quot;type\&quot;:\&quot;boolean\&quot;},\&quot;address\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;pizzaType\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;creditCardNumber\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;quantity\&quot;:{\&quot;type\&quot;:\&quot;number\&quot;},\&quot;orderId\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;orderId\&quot;]}},\&quot;consumes\&quot;:[\&quot;application/json\&quot;],\&quot;info\&quot;:{\&quot;title\&quot;:\&quot;PizzaShackAPI\&quot;,\&quot;description\&quot;:\&quot;This document describe a RESTFul API for Pizza Shack online pizza delivery store.\\n\&quot;,\&quot;license\&quot;:{\&quot;name\&quot;:\&quot;Apache 2.0\&quot;,\&quot;url\&quot;:\&quot;http://www.apache.org/licenses/LICENSE-2.0.html\&quot;},\&quot;contact\&quot;:{\&quot;email\&quot;:\&quot;architecture@pizzashack.com\&quot;,\&quot;name\&quot;:\&quot;John Doe\&quot;,\&quot;url\&quot;:\&quot;http://www.pizzashack.com\&quot;},\&quot;version\&quot;:\&quot;1.0.0\&quot;}}&quot;,&#xd;
+   &quot;apiDefinition&quot;: &quot;{\&quot;paths\&quot;:{\&quot;/${path}\&quot;:{\&quot;post\&quot;:{\&quot;x-auth-type\&quot;:\&quot;Application &amp; Application User\&quot;,\&quot;x-throttling-tier\&quot;:\&quot;Unlimited\&quot;,\&quot;description\&quot;:\&quot;Create a new Order\&quot;,\&quot;parameters\&quot;:[{\&quot;schema\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/Order\&quot;},\&quot;description\&quot;:\&quot;Order object that needs to be added\&quot;,\&quot;name\&quot;:\&quot;body\&quot;,\&quot;required\&quot;:true,\&quot;in\&quot;:\&quot;body\&quot;}],\&quot;responses\&quot;:{\&quot;201\&quot;:{\&quot;headers\&quot;:{\&quot;Location\&quot;:{\&quot;description\&quot;:\&quot;The URL of the newly created resource.\&quot;,\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;schema\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/Order\&quot;},\&quot;description\&quot;:\&quot;Created.\&quot;}}}},\&quot;/menu\&quot;:{\&quot;get\&quot;:{\&quot;x-auth-type\&quot;:\&quot;Application &amp; Application User\&quot;,\&quot;x-throttling-tier\&quot;:\&quot;Unlimited\&quot;,\&quot;description\&quot;:\&quot;Return a list of available menu items\&quot;,\&quot;parameters\&quot;:[],\&quot;responses\&quot;:{\&quot;200\&quot;:{\&quot;headers\&quot;:{},\&quot;schema\&quot;:{\&quot;title\&quot;:\&quot;Menu\&quot;,\&quot;properties\&quot;:{\&quot;list\&quot;:{\&quot;items\&quot;:{\&quot;$ref\&quot;:\&quot;#/definitions/MenuItem\&quot;},\&quot;type\&quot;:\&quot;array\&quot;}},\&quot;type\&quot;:\&quot;object\&quot;},\&quot;description\&quot;:\&quot;OK.\&quot;}}}}},\&quot;schemes\&quot;:[\&quot;https\&quot;],\&quot;produces\&quot;:[\&quot;application/json\&quot;],\&quot;swagger\&quot;:\&quot;2.0\&quot;,\&quot;definitions\&quot;:{\&quot;MenuItem\&quot;:{\&quot;title\&quot;:\&quot;Pizza menu Item\&quot;,\&quot;properties\&quot;:{\&quot;price\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;description\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;name\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;image\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;name\&quot;]},\&quot;Order\&quot;:{\&quot;title\&quot;:\&quot;Pizza Order\&quot;,\&quot;properties\&quot;:{\&quot;customerName\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;delivered\&quot;:{\&quot;type\&quot;:\&quot;boolean\&quot;},\&quot;address\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;pizzaType\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;creditCardNumber\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;quantity\&quot;:{\&quot;type\&quot;:\&quot;number\&quot;},\&quot;orderId\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;orderId\&quot;]}},\&quot;consumes\&quot;:[\&quot;application/json\&quot;],\&quot;info\&quot;:{\&quot;title\&quot;:\&quot;PizzaShackAPI\&quot;,\&quot;description\&quot;:\&quot;This document describe a RESTFul API for Pizza Shack online pizza delivery store.\\n\&quot;,\&quot;license\&quot;:{\&quot;name\&quot;:\&quot;Apache 2.0\&quot;,\&quot;url\&quot;:\&quot;http://www.apache.org/licenses/LICENSE-2.0.html\&quot;},\&quot;contact\&quot;:{\&quot;email\&quot;:\&quot;architecture@pizzashack.com\&quot;,\&quot;name\&quot;:\&quot;John Doe\&quot;,\&quot;url\&quot;:\&quot;http://www.pizzashack.com\&quot;},\&quot;version\&quot;:\&quot;1.0.0\&quot;}}&quot;,&#xd;
    &quot;wsdlUri&quot;: null,&#xd;
    &quot;status&quot;: &quot;CREATED&quot;,&#xd;
    &quot;responseCaching&quot;: &quot;Disabled&quot;,&#xd;
@@ -358,6 +373,12 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
+          <RegExUserParameters guiclass="RegExUserParametersGui" testclass="RegExUserParameters" testname="RegEx User Parameters" enabled="true">
+            <stringProp name="RegExUserParameters.regex_ref_name"></stringProp>
+            <stringProp name="RegExUserParameters.param_names_gr_nr"></stringProp>
+            <stringProp name="RegExUserParameters.param_values_gr_nr"></stringProp>
+          </RegExUserParameters>
+          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List of available APIs" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -453,95 +474,6 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="AssertionVisualizer" testclass="ResultCollector" testname="Assertion Results" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="stateChangeApiId" elementType="Argument">
-              <stringProp name="Argument.name">stateChangeApiId</stringProp>
-              <stringProp name="Argument.value">16b0b2e5-1c40-4537-a20b-aaf2d4dd4177</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="token" elementType="Argument">
-              <stringProp name="Argument.name">token</stringProp>
-              <stringProp name="Argument.value">YWRtaW46YWRtaW4=</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="obtain the consumer key/secret key" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -588,6 +520,17 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
         <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract ClientId" enabled="true">
           <stringProp name="JSONPostProcessor.referenceNames">clientId</stringProp>
@@ -612,17 +555,6 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
 byte[] encodedUsernamePassword = Base64.encodeBase64(&quot;${clientId}:${clientSecret}&quot;.getBytes());
 vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</stringProp>
         </BeanShellPreProcessor>
-        <hashTree/>
-        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
-          <collectionProp name="Asserion.test_strings">
-            <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
-          </collectionProp>
-          <stringProp name="Assertion.custom_message"></stringProp>
-          <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
-          <boolProp name="Assertion.assume_success">false</boolProp>
-          <intProp name="Assertion.test_type">2</intProp>
-          <stringProp name="Assertion.scope">all</stringProp>
-        </ResponseAssertion>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate the access token for Publisher" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -799,6 +731,17 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
         <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract ClientId" enabled="true">
           <stringProp name="JSONPostProcessor.referenceNames">clientId</stringProp>
@@ -823,17 +766,6 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
 byte[] encodedUsernamePassword = Base64.encodeBase64(&quot;${clientId}:${clientSecret}&quot;.getBytes());
 vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</stringProp>
         </BeanShellPreProcessor>
-        <hashTree/>
-        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="200 OK HTTP Code Response Assertion" enabled="true">
-          <collectionProp name="Asserion.test_strings">
-            <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
-          </collectionProp>
-          <stringProp name="Assertion.custom_message"></stringProp>
-          <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
-          <boolProp name="Assertion.assume_success">false</boolProp>
-          <intProp name="Assertion.test_type">2</intProp>
-          <stringProp name="Assertion.scope">all</stringProp>
-        </ResponseAssertion>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate the access token as Subscriber" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -986,7 +918,7 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
                 <stringProp name="Argument.value">{&#xd;
     &quot;throttlingTier&quot;: &quot;Unlimited&quot;,&#xd;
     &quot;description&quot;: &quot;sample app description&quot;,&#xd;
-    &quot;name&quot;: &quot;sampleapp55&quot;,&#xd;
+    &quot;name&quot;: &quot;${app}&quot;,&#xd;
     &quot;callbackUrl&quot;: &quot;http://my.server.com/callback&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1181,7 +1113,7 @@ vars.put(&quot;base64HeaderValue&quot;,new String(encodedUsernamePassword));</st
           <stringProp name="HTTPSampler.port">8243</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${context}/${version}/order</stringProp>
+          <stringProp name="HTTPSampler.path">${context}/${version}/${path}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

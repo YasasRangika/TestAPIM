@@ -1,0 +1,92 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1542009171141,815,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,802,0,610
+1542009172081,244,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,244,0,89
+1542009172331,44,Creator create a new API,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,342,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,44,0,0
+1542009172399,28,List of available APIs,200,OK,API Publisher 1-1,text,true,,520,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,28,0,0
+1542009172434,8,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,8,0,0
+1542009172449,36,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,36,0,0
+1542009172491,8,Publisher changing API status to Publish,400,Bad Request,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,298,295,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=&action=Publish,7,0,0
+1542009172504,17,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,17,0,12
+1542009172526,24,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,24,0,0
+1542009172555,59,Create a new application,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,308,434,1,1,https://localhost:9443/api/am/store/v0.13/applications,59,0,0
+1542009172624,15,Generate keys for application,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,579,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=,13,0,0
+1542009172643,36,Add a new subscription,400,Bad Request,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,298,345,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,35,0,0
+1542009172684,44,Invoke the API,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,392,408,1,1,https://localhost:8243//order,44,0,0
+1542009325951,428,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,427,0,405
+1542009326451,99,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,99,0,32
+1542009326557,398,Creator create a new API,201,Created,API Publisher 1-1,text,true,Test failed: headers expected to contain /HTTP/1.1 200 OK/,4138,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,398,0,0
+1542009326969,13,List of available APIs,200,OK,API Publisher 1-1,text,true,,247,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,12,0,0
+1542009326987,13,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,12,0,0
+1542009327023,34,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,33,0,0
+1542009327061,436,Publisher changing API status to Publish,200,OK,API Publisher 1-1,,true,,103,331,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=ddbe111c-3605-40c0-b6b1-6487625867fc&action=Publish,436,0,0
+1542009327501,6,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,6,0,0
+1542009327512,19,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,19,0,0
+1542009327535,19,Create a new application,201,Created,API Publisher 1-1,text,true,Test failed: headers expected to contain /HTTP/1.1 200 OK/,570,435,1,1,https://localhost:9443/api/am/store/v0.13/applications,19,0,0
+1542009327559,220,Generate keys for application,200,OK,API Publisher 1-1,text,true,,592,615,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=1a198162-218d-4305-889f-50a321b1dcb8,219,0,0
+1542009327783,42,Add a new subscription,201,Created,API Publisher 1-1,text,true,Test failed: headers expected to contain /HTTP/1.1 200 OK/,460,418,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,41,0,0
+1542009327828,129,Invoke the API,201,Created,API Publisher 1-1,text,true,Test failed: headers expected to contain /HTTP/1.1 200 OK/,628,461,1,1,https://localhost:8243/pizzashack/1.0.0/order,129,0,0
+1542009540806,360,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,360,0,343
+1542009541235,57,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,57,0,32
+1542009541299,360,Creator create a new API,201,Created,API Publisher 1-1,text,true,Test failed: headers expected to contain /HTTP/1.1 200 OK/,4138,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,360,0,0
+1542009541677,9,List of available APIs,200,OK,API Publisher 1-1,text,true,,247,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,9,0,0
+1542009541694,6,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,6,0,0
+1542009541713,18,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,18,0,0
+1542009541734,428,Publisher changing API status to Publish,200,OK,API Publisher 1-1,,true,,103,331,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=cc260f00-867c-4a7b-a1a9-e2dfe3153412&action=Publish,428,0,0
+1542009542167,10,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,10,0,0
+1542009542202,14,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,14,0,0
+1542009542219,10,Create a new application,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,309,435,1,1,https://localhost:9443/api/am/store/v0.13/applications,10,0,0
+1542009542233,6,Generate keys for application,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,579,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=,6,0,0
+1542009542243,10,Add a new subscription,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,382,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,9,0,0
+1542009542256,8,Invoke the API,401,Unauthorized,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,798,425,1,1,https://localhost:8243/pizzashack/1.0.0/order,8,0,0
+1542009557231,349,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,349,0,331
+1542009557657,51,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,51,0,32
+1542009557715,9,Creator create a new API,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,342,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,9,0,0
+1542009557732,18,List of available APIs,200,OK,API Publisher 1-1,text,true,,520,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,18,0,0
+1542009557757,7,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,7,0,0
+1542009557771,18,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,18,0,0
+1542009557794,7,Publisher changing API status to Publish,400,Bad Request,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,298,295,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=&action=Publish,6,0,0
+1542009557806,15,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,15,0,9
+1542009557826,23,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,22,0,0
+1542009557853,15,Create a new application,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,309,435,1,1,https://localhost:9443/api/am/store/v0.13/applications,15,0,0
+1542009557873,8,Generate keys for application,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,579,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=,8,0,0
+1542009557885,8,Add a new subscription,400,Bad Request,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,298,345,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,7,0,0
+1542009557897,9,Invoke the API,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,392,408,1,1,https://localhost:8243//order,9,0,0
+1542010972609,399,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,398,0,371
+1542010973081,67,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,67,0,29
+1542010973155,289,Creator create a new API,201,Created,API Publisher 1-1,text,true,,4138,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,288,0,0
+1542010973465,8,List of available APIs,200,OK,API Publisher 1-1,text,true,,247,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,8,0,0
+1542010973489,10,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,10,0,0
+1542010973509,45,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,45,0,0
+1542010973559,414,Publisher changing API status to Publish,200,OK,API Publisher 1-1,,true,,103,331,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=48249070-66d6-4d31-a39d-5f1de50d69e4&action=Publish,414,0,0
+1542010973976,7,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,7,0,0
+1542010973990,20,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,20,0,0
+1542010974014,12,Create a new application,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,311,437,1,1,https://localhost:9443/api/am/store/v0.13/applications,12,0,0
+1542010974032,8,Generate keys for application,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,579,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=,8,0,0
+1542010974045,9,Add a new subscription,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,269,382,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,9,0,0
+1542010974058,4,Invoke the API,401,Unauthorized,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,798,409,1,1,https://localhost:8243/pizzashack/1.0.0/order,4,0,0
+1542011104339,513,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,512,0,366
+1542011104922,82,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,82,0,43
+1542011105014,279,Creator create a new API,201,Created,API Publisher 1-1,text,true,,4138,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,279,0,0
+1542011105306,9,List of available APIs,200,OK,API Publisher 1-1,text,true,,247,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,9,0,0
+1542011105321,9,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,8,0,0
+1542011105337,66,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,66,0,0
+1542011105407,498,Publisher changing API status to Publish,200,OK,API Publisher 1-1,,true,,103,331,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=a1d74f8b-842c-4c31-a4e4-c693beea6f81&action=Publish,498,0,0
+1542011105910,5,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,5,0,0
+1542011105920,16,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,16,0,0
+1542011105944,18,Create a new application,409,Conflict,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,311,437,1,1,https://localhost:9443/api/am/store/v0.13/applications,18,0,0
+1542011105968,5,Generate keys for application,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 200 OK/,269,579,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=,5,0,0
+1542011105977,9,Add a new subscription,404,Not Found,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,269,382,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,8,0,0
+1542011105989,3,Invoke the API,401,Unauthorized,API Publisher 1-1,text,false,Test failed: headers expected to contain /HTTP/1.1 201 Created/,798,409,1,1,https://localhost:8243/pizzashack/1.0.0/order,3,0,0
+1542011590563,504,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,503,0,333
+1542011591121,94,Generate the access token for Creator,200,OK,API Publisher 1-1,text,true,,535,450,1,1,https://localhost:8243/token,94,0,55
+1542011591222,256,Creator create a new API,201,Created,API Publisher 1-1,text,true,,4138,4292,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,256,0,0
+1542011591487,5,List of available APIs,200,OK,API Publisher 1-1,text,true,,247,204,1,1,https://localhost:9443/api/am/publisher/v0.13/apis,4,0,0
+1542011591497,9,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,9,0,0
+1542011591513,28,Generate the access token for Publisher,200,OK,API Publisher 1-1,text,true,,489,413,1,1,https://localhost:8243/token,28,0,0
+1542011591546,507,Publisher changing API status to Publish,200,OK,API Publisher 1-1,,true,,103,331,1,1,https://localhost:9443/api/am/publisher/v0.13/apis/change-lifecycle?apiId=cbf7b03d-3086-4bcb-9b43-dec8379e00e4&action=Publish,507,0,0
+1542011592057,6,obtain the consumer key/secret key,200,OK,API Publisher 1-1,text,true,,457,421,1,1,https://localhost:9443/client-registration/v0.13/register,6,0,0
+1542011592068,18,Generate the access token as Subscriber,200,OK,API Publisher 1-1,text,true,,458,379,1,1,https://localhost:8243/token,18,0,0
+1542011592090,9,Create a new application,201,Created,API Publisher 1-1,text,true,,572,437,1,1,https://localhost:9443/api/am/store/v0.13/applications,8,0,0
+1542011592103,99,Generate keys for application,200,OK,API Publisher 1-1,text,true,,592,615,1,1,https://localhost:9443/api/am/store/v0.13/applications/generate-keys?applicationId=1f26d0f4-21e4-4318-9a2e-7566f6880df6,99,0,0
+1542011592206,32,Add a new subscription,201,Created,API Publisher 1-1,text,true,,460,418,1,1,https://localhost:9443/api/am/store/v0.13/subscriptions,31,0,0
+1542011592241,21,Invoke the API,201,Created,API Publisher 1-1,text,true,,622,445,1,1,https://localhost:8243/pizzashack/1.0.0/order,21,0,0
